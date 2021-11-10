@@ -1,0 +1,87 @@
+﻿
+@model IEnumerable<SistemaWebVuelos.Models.Vuelo>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <table>
+        @*<tr>
+            <td> @Html.ActionLink("Create New", "Create", "Vuelo") </td>
+        </tr>*@
+        <tr>
+            <td></td>
+            <td>
+                @using (Html.BeginForm("Create", "Vuelo", FormMethod.Get))
+                {
+                    <input type="submit" value="Create" />
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @using (Html.BeginForm("SearchByDestiny", "Vuelo", FormMethod.Get))
+                {
+                    @Html.Label("Destino:")
+                    @Html.TextBox("destino", null)
+
+                    <input type="submit" value="Buscar" />
+                }
+
+            </td>
+            <td>
+                @using (Html.BeginForm("Index", "Vuelo", FormMethod.Get))
+                {
+                    <input type="submit" value="Traer Todos" />
+                }
+            </td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Fecha)  </th>
+            <th>@Html.DisplayNameFor(model => model.Destino)</th>
+            <th>@Html.DisplayNameFor(model => model.Origen)</th>
+            <th>@Html.DisplayNameFor(model => model.Matricula)</th>
+            <th>Details</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Fecha)</td>
+                <td>@Html.DisplayFor(modelItem => item.Destino)</td>
+                <td>@Html.DisplayFor(modelItem => item.Origen)</td>
+                <td>@Html.DisplayFor(modelItem => item.Matricula)</td>
+                <td>
+                    @Html.ActionLink("Detail", "Detail", new { id = item.Id })
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id })
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </table>
+
+    @section sidebar {
+        <div>
+            <img src="~/Images/Avion1.jpg" alt="Avion1" />
+        </div>
+        <div>
+            <img src="~/Images/Avion2.jpeg" alt="Avion2" />
+        </div>
+
+    }
+
+
+
+</body>
+</html>

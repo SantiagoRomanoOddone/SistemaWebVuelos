@@ -1,0 +1,53 @@
+﻿
+@model SistemaWebVuelos.Models.Vuelo
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+    
+    @using (Html.BeginForm("Edit", "Vuelo", FormMethod.Post))
+        {
+            @Html.HiddenFor(model => model.Id)
+    <table>
+        <tr>
+            <td>@Html.LabelFor(model => model.Fecha)</td>
+            <td>
+                @Html.EditorFor(model => model.Fecha)
+                @Html.ValidationMessageFor(model => model.Fecha)
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(model => model.Destino)</td>
+            <td>
+                @Html.EditorFor(model => model.Destino)
+                @Html.ValidationMessageFor(model => model.Destino)
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(model => model.Origen)</td>
+            <td>
+                @Html.EditorFor(model => model.Origen)
+                @Html.ValidationMessageFor(model => model.Origen)
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(model => model.Matricula)</td>
+            <td>
+                @Html.EditorFor(model => model.Matricula)
+                @Html.ValidationMessageFor(model => model.Matricula)
+            </td>
+        </tr>
+    </table>
+            <p>
+                <input type="submit" value="Save" />
+            </p>
+        }
+
+    @Html.ActionLink("Back to List", "Index", "Vuelo")
+</body>
+</html>

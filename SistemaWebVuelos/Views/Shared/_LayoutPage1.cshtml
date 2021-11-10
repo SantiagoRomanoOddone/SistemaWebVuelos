@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/main.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="header">
+        <h1>Sistema Vuelos</h1>
+    </div>
+    <div id="menu">
+        <div>
+            @Html.ActionLink("Inicio", "Index", "Home")
+        </div>
+
+        <div>
+            @Html.ActionLink("Vuelos", "Index", "Vuelo")
+        </div>
+    </div>
+    <main>
+        <div id="izq">
+            @if (IsSectionDefined("sidebar"))
+            {
+                @RenderSection("sideBar")
+            }
+            else
+            {
+                <div>
+                    <img src="~/Images/Ciudad1.jpg" alt="Ciudad1" />
+                </div>
+                <div>
+                    <img src="~/Images/Ciudad2.png" alt="Ciudad2" />
+                </div>
+
+            }
+
+
+        </div>
+
+        <div id="content">
+            @RenderBody()
+        </div>
+
+    </main>
+    <div id="footer">
+        <p>Info@vuelo.com</p>
+    </div>
+</body>
+</html>

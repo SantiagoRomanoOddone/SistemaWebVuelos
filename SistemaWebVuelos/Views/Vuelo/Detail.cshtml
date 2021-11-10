@@ -1,0 +1,73 @@
+﻿
+@model SistemaWebVuelos.Models.Vuelo
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Detail</title>
+</head>
+<body>
+
+    @*<fieldset>
+            <legend>Vuelo Detail</legend>
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.Fecha)
+            </div>
+            <div class=" display-text">
+                @Html.DisplayFor(model => model.Fecha)
+            </div>
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.Destino)
+            </div>
+            <div class=" display-text">
+                @Html.DisplayFor(model => model.Destino)
+            </div>
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.Origen)
+            </div>
+            <div class=" display-text">
+                @Html.DisplayFor(model => model.Origen)
+            </div>
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.Matricula)
+            </div>
+            <div class=" display-text">
+                @Html.DisplayFor(model => model.Matricula)
+            </div>
+
+        </fieldset>*@
+
+    <fieldset>
+        <legend>Vuelo Detail</legend>
+        <table>
+          
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.Id)</td>
+                <td>@Html.DisplayFor(model => model.Id)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.Fecha)</td>
+                <td>@Html.DisplayFor(model => model.Fecha)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.Destino)</td>
+                <td>@Html.DisplayFor(model => model.Destino)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.Origen)</td>
+                <td>@Html.DisplayFor(model => model.Origen)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.Matricula)</td>
+                <td>@Html.DisplayFor(model => model.Matricula)</td>
+            </tr>
+        </table>
+
+    </fieldset>
+    <p>
+        @Html.ActionLink("Back to List", "Index", "Vuelo")
+    </p>
+</body>
+</html>

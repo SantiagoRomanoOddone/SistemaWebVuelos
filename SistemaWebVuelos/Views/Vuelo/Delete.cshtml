@@ -1,0 +1,69 @@
+﻿
+@model SistemaWebVuelos.Models.Vuelo
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <h2> Vuelo Delete</h2>
+    <p>Estas seguro que quieres eliminar este vuelo?</p>
+    @using (Html.BeginForm("Delete", "Vuelo", FormMethod.Post))
+    {        
+        @*<fieldset>
+                <table>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Fecha)</th>
+                        <th>@Html.DisplayNameFor(model => model.Destino)</th>
+                        <th>@Html.DisplayNameFor(model => model.Origen)</th>
+                        <th>@Html.DisplayNameFor(model => model.Matricula)</th>
+                    </tr>
+                    <tr>
+                        <td>@Html.DisplayFor(model => model.Fecha)</td>
+                        <td>@Html.DisplayFor(model => model.Destino)</td>
+                        <td>@Html.DisplayFor(model => model.Origen)</td>
+                        <td>@Html.DisplayFor(model => model.Matricula)</td>
+
+                    </tr>
+                </table>
+            </fieldset>*@
+        <fieldset>
+            <legend>Detalles del Vuelo</legend>
+            <table>
+
+                <tr>
+                    <td><b>@Html.DisplayNameFor(model => model.Id)</b></td>
+                    <td>@Html.DisplayFor(model => model.Id)</td>
+                </tr>
+                <tr>
+                    <td><b>@Html.DisplayNameFor(model => model.Fecha)</b></td>
+                    <td>@Html.DisplayFor(model => model.Fecha)</td>
+                </tr>
+                <tr>
+                    <td><b>@Html.DisplayNameFor(model => model.Destino)</b></td>
+                    <td>@Html.DisplayFor(model => model.Destino)</td>
+                </tr>
+                <tr>
+                    <td><b>@Html.DisplayNameFor(model => model.Origen)</b></td>
+                    <td>@Html.DisplayFor(model => model.Origen)</td>
+                </tr>
+                <tr>
+                    <td><b>@Html.DisplayNameFor(model => model.Matricula)</b></td>
+                    <td>@Html.DisplayFor(model => model.Matricula)</td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <p>
+            <input type="submit" value="Delete" />
+        </p>
+
+    }
+    <p>
+        @Html.ActionLink("Back to List", "Index", "Vuelo")
+    </p>
+</body>
+</html>
