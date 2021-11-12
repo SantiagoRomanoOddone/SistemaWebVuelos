@@ -14,6 +14,14 @@ namespace SistemaWebVuelos
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "destino",
+                url: "Vuelo/TraerDestino/{destino}",
+                defaults: new { controller = "Vuelo", action = "SearchByDestiny" });
+
+
+            //default
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }

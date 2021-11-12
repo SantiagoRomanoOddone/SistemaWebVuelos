@@ -26,5 +26,7 @@ namespace SistemaWebVuelos.Models
         public string Origen { get; set; }
         [Range(100, 10000, ErrorMessage = "La matricula tiene que estar entre el rango de 100 y 10000")]
         public int Matricula { get; set; }
+
+        //[Column(TypeName = "money")]
     }
 }
